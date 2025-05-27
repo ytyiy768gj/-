@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header class="site-header">
+        <div class="logo-container">
+            <img src="img/logotype.png" alt="Логотип Sunmar" class="logo-image">
+        </div>
+
+        <nav class="navigation">
+            <ul>
+                <li><a href="#">Услуги</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="reviews.html">Отзывы</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+
+        <div class="contact-info">
+            <p class="address">г.Омск, ул.Ленина д.19</p>
+            <p class="phone">тел +7(913) 635-31-39</p>
+        </div>
+    </header>
+<br><br><br><br>
+    <div class="testimonials-container">
+        <div class="testimonial-card">
+            <img src="img/photo2.jpg" alt="Полина Лиханова" class="testimonial-img">
+            <div class="testimonial-content">
+                <h3 class="testimonial-name">Полина Лиханова</h3>
+                <p class="testimonial-date">06.07.2017</p>
+                <p class="testimonial-text">
+                    Спасибо за отличный отдых. Менеджеры компании подобрали нам отличный отель на Пхукете.
+                </p>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <img src="img/photo1.jpg" alt="Степанов Афанасий" class="testimonial-img">
+            <div class="testimonial-content">
+                <h3 class="testimonial-name">Степанов Афанасий</h3>
+                <p class="testimonial-date">17.12.2016</p>
+                <p class="testimonial-text">
+                    Доверили свой отдых Вашей компании и не прогадали. Отправил заявку на сайте, мне сразу перезвонили и предложили несколько интересных вариантов.
+                </p>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <img src="img/photo3.jpg" alt="Арман Окчелев" class="testimonial-img">
+            <div class="testimonial-content">
+                <h3 class="testimonial-name">Арман Окчелев</h3>
+                <p class="testimonial-date">01.03.2018</p>
+                <p class="testimonial-text">
+                    Большое спасибо, очень хорошо отдохнули на ГОА. Солнце, море, песок, счастье. Поедем еще!
+                </p>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br>
+     <footer class="footer">
+        <p>предложения на сайте не являются публичной офертой и носят исключительно информационный характер</p>
+        <p>ООО "АРТТРЭВЭЛ" Юр.адрес: 644099 Омск, ул. Ленина, д.19 пом. П4, ИНН 5507256506 / КПП 550701001</p>
+    </footer>
+</body>
+
+
+
+
+<style>
+    body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+    .site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #fff;
+    /* border-bottom: 1px solid #e0e0e0; /* Опциональная нижняя граница */
+    flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+}
+
+/* Секция с логотипом */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    width: 200px; /* Подберите размер по вашему логотипу */
+    margin-right: 15px;
+    
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+/* Навигация */
+.navigation {
+    margin: 0 20px; /* Отступы по бокам, чтобы не прилипала */
+}
+
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.navigation li {
+    margin-right: 25px;
+}
+
+.navigation li:last-child {
+    margin-right: 0;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #333333; /* Темно-серый для ссылок */
+    font-size: 0.875em; /* Примерно 14px */
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.navigation a:hover {
+    color: #D71921; /* Красный цвет при наведении (из логотипа Sunmar) */
+}
+
+/* Контактная информация */
+.contact-info {
+    text-align: right; /* Выравнивание по правому краю по умолчанию */
+}
+
+.contact-info p {
+    margin: 2px 0;
+    font-size: 0.875em; /* Примерно 14px */
+    color: #333333;
+    line-height: 1.4;
+}
+
+.contact-info .phone {
+    font-weight: 600; /* Слегка жирнее */
+}
+
+/* --- Адаптивность --- */
+
+/* Планшеты и небольшие десктопы (до 1024px) */
+@media (max-width: 1024px) {
+    .site-header {
+        padding: 15px 20px; /* Уменьшаем отступы */
+    }
+    .navigation {
+        margin: 0 15px;
+    }
+    .navigation li {
+        margin-right: 20px;
+    }
+}
+
+/* Планшеты и крупные телефоны (до 880px) */
+@media (max-width: 880px) {
+    .site-header {
+        flex-direction: column;   /* Элементы шапки друг под другом */
+        align-items: center;      /* Центрируем блоки */
+        gap: 20px;                /* Расстояние между блоками */
+    }
+
+    .logo-container {
+        /* Центрирование логотипа и текста уже обеспечивается flex-direction: column и align-items: center у родителя */
+        /* Если нужно, чтобы текст под лого тоже центрировался если он переносится: */
+        text-align: center; 
+    }
+
+    .navigation {
+        width: 100%;
+        margin: 0; /* Сбрасываем внешние отступы */
+    }
+
+    .navigation ul {
+        flex-direction: row;      /* Пункты меню в ряд, если помещаются */
+        justify-content: center; /* Центрируем ряд пунктов */
+        flex-wrap: wrap;          /* Разрешаем перенос пунктов на новую строку */
+        gap: 10px 20px;           /* Отступы между пунктами (вертикальный и горизонтальный) */
+    }
+
+    .navigation li {
+        margin-right: 0; /* Сбрасываем, так как используется gap */
+    }
+
+    .contact-info {
+        width: 100%;
+        text-align: center; /* Центрируем контакты */
+    }
+}
+
+/* Маленькие телефоны (до 480px) */
+@media (max-width: 480px) {
+    .site-header {
+        padding: 15px 10px; /* Еще уменьшаем отступы */
+        gap: 15px;
+    }
+
+    .logo-container {
+        flex-direction: column; /* Изображение логотипа над текстом */
+        text-align: center;
+    }
+    .logo-image {
+        margin-right: 0;
+        margin-bottom: 10px; /* Отступ под изображением */
+    }
+    .logo-text {
+        align-items: center; /* Центрируем строки текста в блоке logo-text */
+    }
+    .logo-text .agency-name,
+    .logo-text .agency-tagline {
+        font-size: 0.95em; /* Можно немного увеличить для читаемости */
+    }
+
+
+    .navigation ul {
+        flex-direction: column; /* Пункты меню строго друг под другом */
+        align-items: center;
+        gap: 10px;
+    }
+
+    .navigation li {
+       width: 80%; /* Делаем ссылки шире для удобства нажатия */
+       max-width: 280px; /* Ограничиваем максимальную ширину */
+       text-align: center;
+    }
+    .navigation a {
+        display: block; /* Растягиваем ссылку на всю ширину li */
+        padding: 10px;
+        background-color: #f7f7f7; /* Легкий фон для выделения */
+        border-radius: 5px;
+    }
+    .navigation a:hover {
+        background-color: #e9e9e9;
+    }
+
+    .contact-info p {
+        font-size: 0.8em; /* Уменьшаем шрифт контактов на очень маленьких экранах */
+    }
+}
+
+
+.testimonials-container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 25px; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+
+.testimonial-card {
+    display: flex; 
+    align-items: flex-start; 
+    background-color: #fff;
+    padding: 20px;
+   
+
+    flex: 1 1 300px; 
+    min-width: 280px; 
+    max-width: 350px; 
+}
+
+.testimonial-img {
+    width: 80px; 
+    height: 80px; 
+    object-fit: cover; 
+    border-radius: 50%; 
+    margin-right: 15px; 
+    flex-shrink: 0; 
+}
+
+.testimonial-content {
+    flex-grow: 1; 
+}
+
+.testimonial-name {
+    margin: 0 0 5px 0;
+    font-size: 1.1em; 
+    font-weight: bold;
+    color: #000;
+}
+
+.testimonial-date {
+    margin: 0 0 10px 0;
+    font-size: 0.9em; 
+    color: #666; 
+}
+
+.testimonial-text {
+    margin: 0;
+    font-size: 1em; 
+    line-height: 1.5;
+    color: #333; 
+}
+
+
+@media (max-width: 768px) {
+    .testimonials-container {
+        flex-direction: column; 
+        align-items: center; 
+        gap: 20px; 
+    }
+
+    .testimonial-card {
+        width: 90%; 
+        max-width: 400px; 
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center; 
+        padding: 20px; 
+    }
+
+    .testimonial-img {
+        margin-right: 0; 
+        margin-bottom: 15px; 
+    }
+
+    .testimonial-content h3,
+    .testimonial-content .date,
+    .testimonial-content p {
+        text-align: center; 
+    }
+}
+
+@media (max-width: 480px) {
+     .testimonial-card {
+         width: 95%; 
+         padding: 15px;
+     }
+
+     .testimonial-img {
+         width: 70px;
+         height: 70px;
+     }
+
+     .testimonial-name {
+         font-size: 1em;
+     }
+
+     .testimonial-date {
+         font-size: 0.85em;
+     }
+
+     .testimonial-text {
+         font-size: 0.95em;
+     }
+}
+
+/* Базовые стили для футера */
+        .footer {
+            background-color: #000; /* Черный фон */
+            color: #fff; /* Белый текст */
+            padding: 20px 15px; /* Внутренние отступы сверху/снизу и по бокам */
+            text-align: center; /* Выравнивание текста по центру */
+            font-family: sans-serif; /* Шрифт без засечек */
+            font-size: 14px; /* Размер шрифта */
+            line-height: 1.5; /* Межстрочный интервал */
+        }
+
+        /* Стили для параграфов внутри футера */
+        .footer p {
+            margin: 5px 0; /* Небольшие отступы между строками текста */
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .footer {
+                font-size: 12px; /* Уменьшаем размер шрифта на маленьких экранах */
+                padding: 15px 10px; /* Уменьшаем отступы на маленьких экранах */
+            }
+        }
+
+        @media (max-width: 480px) {
+             .footer {
+                font-size: 10px; /* Еще немного уменьшаем шрифт на очень маленьких экранах */
+                padding: 10px 5px; /* Уменьшаем отступы еще сильнее */
+            }
+        }
+
+
+</style>
+</html>

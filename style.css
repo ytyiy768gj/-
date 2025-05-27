@@ -1,0 +1,649 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #fff;
+    /* border-bottom: 1px solid #e0e0e0; /* Опциональная нижняя граница */
+    flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+}
+
+/* Секция с логотипом */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    width: 200px; /* Подберите размер по вашему логотипу */
+    margin-right: 15px;
+    
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+/* Навигация */
+.navigation {
+    margin: 0 20px; /* Отступы по бокам, чтобы не прилипала */
+}
+
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.navigation li {
+    margin-right: 25px;
+}
+
+.navigation li:last-child {
+    margin-right: 0;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #333333; /* Темно-серый для ссылок */
+    font-size: 0.875em; /* Примерно 14px */
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.navigation a:hover {
+    color: #D71921; /* Красный цвет при наведении (из логотипа Sunmar) */
+}
+
+/* Контактная информация */
+.contact-info {
+    text-align: right; /* Выравнивание по правому краю по умолчанию */
+}
+
+.contact-info p {
+    margin: 2px 0;
+    font-size: 0.875em; /* Примерно 14px */
+    color: #333333;
+    line-height: 1.4;
+}
+
+.contact-info .phone {
+    font-weight: 600; /* Слегка жирнее */
+}
+
+/* --- Адаптивность --- */
+
+/* Планшеты и небольшие десктопы (до 1024px) */
+@media (max-width: 1024px) {
+    .site-header {
+        padding: 15px 20px; /* Уменьшаем отступы */
+    }
+    .navigation {
+        margin: 0 15px;
+    }
+    .navigation li {
+        margin-right: 20px;
+    }
+}
+
+/* Планшеты и крупные телефоны (до 880px) */
+@media (max-width: 880px) {
+    .site-header {
+        flex-direction: column;   /* Элементы шапки друг под другом */
+        align-items: center;      /* Центрируем блоки */
+        gap: 20px;                /* Расстояние между блоками */
+    }
+
+    .logo-container {
+        /* Центрирование логотипа и текста уже обеспечивается flex-direction: column и align-items: center у родителя */
+        /* Если нужно, чтобы текст под лого тоже центрировался если он переносится: */
+        text-align: center; 
+    }
+
+    .navigation {
+        width: 100%;
+        margin: 0; /* Сбрасываем внешние отступы */
+    }
+
+    .navigation ul {
+        flex-direction: row;      /* Пункты меню в ряд, если помещаются */
+        justify-content: center; /* Центрируем ряд пунктов */
+        flex-wrap: wrap;          /* Разрешаем перенос пунктов на новую строку */
+        gap: 10px 20px;           /* Отступы между пунктами (вертикальный и горизонтальный) */
+    }
+
+    .navigation li {
+        margin-right: 0; /* Сбрасываем, так как используется gap */
+    }
+
+    .contact-info {
+        width: 100%;
+        text-align: center; /* Центрируем контакты */
+    }
+}
+
+/* Маленькие телефоны (до 480px) */
+@media (max-width: 480px) {
+    .site-header {
+        padding: 15px 10px; /* Еще уменьшаем отступы */
+        gap: 15px;
+    }
+
+    .logo-container {
+        flex-direction: column; /* Изображение логотипа над текстом */
+        text-align: center;
+    }
+    .logo-image {
+        margin-right: 0;
+        margin-bottom: 10px; /* Отступ под изображением */
+    }
+    .logo-text {
+        align-items: center; /* Центрируем строки текста в блоке logo-text */
+    }
+    .logo-text .agency-name,
+    .logo-text .agency-tagline {
+        font-size: 0.95em; /* Можно немного увеличить для читаемости */
+    }
+
+
+    .navigation ul {
+        flex-direction: column; /* Пункты меню строго друг под другом */
+        align-items: center;
+        gap: 10px;
+    }
+
+    .navigation li {
+       width: 80%; /* Делаем ссылки шире для удобства нажатия */
+       max-width: 280px; /* Ограничиваем максимальную ширину */
+       text-align: center;
+    }
+    .navigation a {
+        display: block; /* Растягиваем ссылку на всю ширину li */
+        padding: 10px;
+        background-color: #f7f7f7; /* Легкий фон для выделения */
+        border-radius: 5px;
+    }
+    .navigation a:hover {
+        background-color: #e9e9e9;
+    }
+
+    .contact-info p {
+        font-size: 0.8em; /* Уменьшаем шрифт контактов на очень маленьких экранах */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hero {
+    position: relative;
+    background-image: url("/assets/img/type1.png");
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.hero h1 {
+    color: rgb(255, 255, 255);
+    font-size: 80px;
+    margin: 0;
+}
+
+.hero h2 {
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+    margin: 10px 0;
+}
+
+.offer {
+    position: absolute;
+    bottom: 30px;
+    right: 50px;
+    color: rgb(0, 0, 0);
+}
+
+.offer p {
+    margin: 5px 40px;
+    color: white;
+    font-size: 20px;
+}
+
+.offer button {
+    background-color: #2600ff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 17px;
+    border-radius: 16px;
+    width: 200px;
+    height: 60px;
+    margin-top: 20px;
+}
+
+.offer button:hover {
+    background-color: #ff5a5a;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.advantages {
+    text-align: center;
+    max-width: 100%;
+    padding: 20px;
+}
+
+.advantage {
+    display: inline-block;
+    width: 30%;
+    margin: 10px;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+.advantage img {
+    width: 80px;
+    height: 80px;
+}
+
+
+
+@media (max-width: 768px) {
+    .advantage {
+        width: 100%;
+        }
+    }
+
+
+
+
+
+
+h1 {
+    text-align: center;
+}
+
+
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.service {
+    background-color: #f9f9f9;
+    border-radius: 16px;
+    overflow: hidden;
+    width: calc(33% - 20px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+}
+
+.service:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.service img {
+    width: 100%;
+    height: auto;
+}
+
+.service-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.service-content h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.service-content p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.price {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.button {
+    background-color: #ff8383;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 16px;
+    text-transform: uppercase;
+    font-size: 17px;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #ff5a5a;
+}
+
+@media (max-width: 768px) {
+    .service {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .service {
+        width: 100%;
+    }
+}
+
+
+
+
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 80px;
+    background-color: #a1a1a1;
+    color: #fff;
+}
+.title {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 150px;
+}
+.section {
+    margin-top: 60px;
+}
+.section-title {
+    font-weight: bold;
+}
+
+
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container3 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 150px;
+}
+
+.content {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+}
+
+h1, h3 {
+    text-align: justify;
+}
+
+
+
+
+
+
+
+.container4 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    height: 100vh;
+    
+}
+
+.text-section {
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+ h1 {
+    font-size: 24px;
+    margin-top: 150px;
+    margin-bottom: 10px;
+}
+
+.text-section p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.text-section ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.text-section li {
+    margin-bottom: 10px;
+    list-style-type: disc;
+}
+
+
+.image-section {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    background-image: url('/assets/img/rocky.jpg');
+   
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contact-container {
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+
+p {
+    font-size: 1em;
+    margin: 5px 0;
+    text-align: center;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    text-align: center;
+}
+
+
+
+
+
+
+/* Базовые стили для футера */
+        .footer {
+            background-color: #000; /* Черный фон */
+            color: #fff; /* Белый текст */
+            padding: 20px 15px; /* Внутренние отступы сверху/снизу и по бокам */
+            text-align: center; /* Выравнивание текста по центру */
+            font-family: sans-serif; /* Шрифт без засечек */
+            font-size: 14px; /* Размер шрифта */
+            line-height: 1.5; /* Межстрочный интервал */
+        }
+
+        /* Стили для параграфов внутри футера */
+        .footer p {
+            margin: 5px 0; /* Небольшие отступы между строками текста */
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .footer {
+                font-size: 12px; /* Уменьшаем размер шрифта на маленьких экранах */
+                padding: 15px 10px; /* Уменьшаем отступы на маленьких экранах */
+            }
+        }
+
+        @media (max-width: 480px) {
+             .footer {
+                font-size: 10px; /* Еще немного уменьшаем шрифт на очень маленьких экранах */
+                padding: 10px 5px; /* Уменьшаем отступы еще сильнее */
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+ /* Стили для модального окна */
+ .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 10px 10px;
+    border: 1px solid #888;
+    width: 400px;
+}
+
+
+.modal input[type="text"],
+.modal input[type="email"],
+.modal input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+
+
+
